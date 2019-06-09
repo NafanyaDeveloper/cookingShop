@@ -1,0 +1,36 @@
+﻿@model CookShop
+
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";//форма создания столовой
+}
+
+
+<form method="post" enctype="multipart/form-data" asp-controller="Admin" asp-action="CreateCookShop" class="col-12">
+    <div class="my-2 text-dark">
+        <h5>Создать столовую</h5>
+    </div>
+    <div class="form-group">
+        <label>Название</label>
+        <input class="form-control" name="Title" type="text" required />
+    </div>
+    <div class="form-group">
+        <label>Начало работы</label>
+        <input class="form-control" name="StartTime" type="time" required />
+    </div>
+    <div class="form-group">
+        <label>Конец работы</label>
+        <input class="form-control" name="CloseTime" type="time" required />
+    </div>
+    <div class="form-group">
+        <label>Логотип</label>
+        <input type="file" name="Image" required class="btn-block" accept="image/*" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-block">
+        Создать
+    </button>
+</form>
+<a asp-action="Index" class="btn-block col-12 mt-2" style="text-decoration: none">
+    <button class="btn btn-outline-secondary btn-block">
+        Вернуться
+    </button>
+</a>

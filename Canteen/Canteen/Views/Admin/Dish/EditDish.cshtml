@@ -1,0 +1,53 @@
+﻿@model Dish
+
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";//форма редактирования блюда для админки
+}
+
+
+<form method="post" enctype="multipart/form-data" asp-controller="Admin" asp-action="EditDish" class="col-12"
+      asp-route-id="@Model.Id">
+    <div class="my-2 text-dark">
+        <h5>Редактировать блюдо</h5>
+    </div>
+    <div class="form-group">
+        <label asp-for="Title">Название</label>
+        <input asp-for="Title" class="form-control" name="Title" type="text" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Calorie">Калорийность</label>
+        <input asp-for="Calorie" class="form-control" name="Calorie" type="number" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Protein">Содержание белков</label>
+        <input asp-for="Protein" class="form-control" name="Protein" type="number" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Fat">Содержание жиров</label>
+        <input asp-for="Fat" class="form-control" name="Fat" type="number" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Carbohydrate">Содержание углеводов</label>
+        <input asp-for="Carbohydrate" class="form-control" name="Carbohydrate" type="number" required />
+    </div>
+    <div class="form-group" hidden>
+        <label asp-for="CategoryId"></label>
+        <input asp-for="CategoryId" class="form-control" name="CategoryId" required />
+    </div>
+    <div class="form-group" hidden>
+        <label asp-for="Img"></label>
+        <input asp-for="Img" class="form-control" name="Img" required />
+    </div>
+    <div class="form-group">
+        <label>Логотип</label>
+        <input type="file" name="Image" class="btn-block" accept="image/*" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-block">
+        Изменить
+    </button>
+</form>
+<a asp-action="CategoryInfo" asp-route-id="@Model.CategoryId" class="btn-block col-12 mt-2" style="text-decoration: none">
+    <button class="btn btn-outline-secondary btn-block">
+        Вернуться
+    </button>
+</a>

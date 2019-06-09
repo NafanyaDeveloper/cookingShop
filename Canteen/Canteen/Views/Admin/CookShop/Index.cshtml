@@ -1,0 +1,33 @@
+﻿@model List<CookShop>
+
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";
+}
+
+
+
+@foreach (CookShop i in Model)//страница с карточками столовых
+{
+    <div class="card col-3 my-2 p-0 mx-1 mb-3" style="width:100%">
+        <img class="card-img-top" src="@i.Img" alt="Card image" style="width:100%"  height="150">
+        <div class="card-body">
+            <h4 class="card-title">@i.Title (@i.StartTime - @i.CloseTime)</h4>
+            <div>
+                <a style="text-decoration: none" asp-action="CookShopInfo" asp-route-id="@i.Id" class="btn-block">
+                    <button class="btn btn-outline-success btn-block">Подробнее</button>
+                </a>
+                <a style="text-decoration: none" asp-action="EditCookShop" asp-route-id="@i.Id" class="btn-block">
+                    <button class="btn btn-outline-info btn-block">Изменить</button>
+                </a>
+                <a style="text-decoration: none" asp-action="DeleteCookShop" asp-route-id="@i.Id" class="btn-block">
+                    <button class="btn btn-outline-danger btn-block">Удалить</button>
+                </a>
+            </div>
+</div>
+    </div>
+}
+    <a style="text-decoration: none" asp-action="CreateCookShop" class="my-5 btn-block">
+        <button class="btn btn-outline-warning btn-block">
+            Добавить столовую
+        </button>
+    </a>

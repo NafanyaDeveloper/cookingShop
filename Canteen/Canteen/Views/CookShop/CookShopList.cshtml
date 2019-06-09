@@ -1,0 +1,6 @@
+﻿@model  List<CookShop>
+
+@foreach(CookShop item in Model) // список для меню столовой
+{
+    <li class="choose_cafe_1"><a href="#" class="ctgListItem" id="@item.Id">@item.Title</a></li>
+}

@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Столовая</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Иконки -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png"> 
+    <!-- подключение Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/shortcode/shortcodes.css">
+    <!-- Главные стили -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Адаптивность через css -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- приятный шрифт -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper fixed__footer">
+        <!-- Шапка с функциями выбора столовой, показом времени работы и корзиной -->
+        <header id="header" class="htc-header header--3">
+            <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="logo">
+                                    <a href="index.html" id="cs_logo">
+                                        <h3 class="logo">Без тараканoff</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                <nav class="mainmenu__nav">
+                                    <ul class="main__menu">
+                                        <li class="drop">
+                                            <a href="">Выбрать столовую</a>
+                                            <ul class="dropdown" id="cslist"></ul>
+                                        </li>
+                                        <li class="regime"><a name="top" id="cs_time">Режим работы</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <ul class="menu-extra" id="show_cart">
+                                    <li class="cart__menu"><span class="ti-shopping-cart"></span></li>
+                                </ul>
+                                <div class="shopping__cart">
+                                    <div class="shopping__cart__inner">
+                                        <div class="offsetmenu__close__btn">
+                                            <a href="#"><i class="zmdi zmdi-close"></i></a>
+                                        </div>
+                                        <div class="shp__cart__wrap" id="cart_content">
+
+                                        </div>
+                                        <ul class="shoping__total">
+                                            <li class="subtotal">Итог:</li>
+                                            <li class="total__price" id="total__price">Стоимость</li>
+                                        </ul>
+                                        <ul class="shoping__total">
+                                            <li class="subtotal">Калории:</li>
+                                            <li class="shp__calories" id="shp__calories">Количество калорий</li>
+                                        </ul>
+                                        <ul class="shopping__btn">
+                                            <li><a href="">Купить</a></li>
+                                        </ul>
+                                        <ul class="shopping__btn">
+                                            <li><a href="#clean_card" id="clean_card">Очистить</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="body__overlay"></div>
+
+        <section class="categories-slider-area bg__white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 menu">
+                        <!-- Менюшка с категориями -->
+                        <div class="product-categories-all">
+                            <div class="menu-title">
+                                <h3>Меню</h3>
+                            </div>
+                            <div class="product-categories-menu basic">
+                                <ul id="ctgList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--    лоадер     -->
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 loader"></div>
+                    <!--                     рандомные (или популярные) блюда
+                     -->
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 initial_slider" id="content">
+
+                    </div>
+
+
+                    <!-- Форма для подгружаемых табличек с названиями, фото и ценой конкретных продуктов. Таблички генерируются на серверной стороне в зависимости от количества видов блюд конкретной категории в БД -->
+
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 category_food">
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- Это блок HTML с конкретными объектами из категории меню -->
+    <!-- Простой футер -->
+    <footer id="footer" class="htc__foooter__area gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="footer__container clearfix">
+                    <div class="col-md-3 col-lg-3 col-sm-6">
+                        <div class="ft__widget">
+                            <div class="ft__logo">
+                                <a href="index.html">
+                                    <img src="images/logo/logo.png" alt="footer logo">
+                                </a>
+                            </div>
+                            <div class="footer-address">
+                                <ul>
+                                    <li>
+                                        <div class="address-icon">
+                                            <i class="zmdi zmdi-pin"></i>
+                                        </div>
+                                        <div id="cafe-adress-1" class="address-text">
+                                            <p>Адрес <br> Адрес</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="address-icon">
+                                            <i class="zmdi zmdi-email"></i>
+                                        </div>
+                                        <div class="address-text">
+                                            <a href="#"> 100lovka@mail.ru</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="address-icon">
+                                            <i class="zmdi zmdi-phone-in-talk"></i>
+                                        </div>
+                                        <div class="address-text">
+                                            <p> телефон </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="social__icon">
+                                <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+                                <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+        <!-- сразу после подключенияjquery вставляешь скрипты, которые ниже !-->
+        <script type="text/javascript">
+            $(".initial_slider").ready(function () {
+                $(".loader").hide();
+            });
+        </script>
+        <script type="text/javascript">
+            window.sr = ScrollReveal({ reset: true });
+            sr.reveal('.product_cart', { duration: 1200 });
+        </script>
+        <script type="text/javascript">
+            $(".ti-shopping-cart").on("click", function () {
+                var that = $(this).closest('.product_cart').find('img');
+                console.log(that);
+                var that_width = that.width() / 2;
+                var that_height = that.height() / 2;
+
+                that.clone()
+                    .css({
+                        'position': 'absolute',
+                        'z-index': '11100',
+                        top: $(this).offset().top - 250,
+                        left: $(this).offset().left - 75,
+                        'width': that_width,
+                        'height': that_height,
+                    })
+                    .appendTo("body")
+                    .animate({
+                        opacity: 0.05,
+                        left: $(".ti-shopping-cart").offset()['left'],
+                        top: $(".ti-shopping-cart").offset()['top'],
+                        width: 20
+                    }, 5000, function () {
+                        $(this).remove();
+                    });
+
+            });
+        </script>
+
+
+        <script src="js/ajax/strings.js"></script>
+        <script src="js/ajax/Category.js"></script>
+        <script src="js/ajax/CookShop.js"></script>
+        <script src="js/ajax/Dish.js"></script>
+        <script src="js/ajax/Cart.js"></script>
+        <script src="js/ajax/onStart.js"></script>
+        <script src="js/ajax/events.js"></script>
+
+        <script type="text/javascript">
+
+            let btn = document.getElementsByClassName('categories');
+            let hide = document.querySelector('.initial_slider');
+            let show = document.querySelector('.category_food');
+            let shop_cart = document.querySelector('.shopping__cart__inner');
+            let shop_cart_btn = document.querySelector('.cart__menu');
+            let shop_cart_close = document.querySelector('.offsetmenu__close__btn');
+            let body_overlay = document.querySelector('.body_overlay');
+            let menu_btn = document.querySelector('.menu-title');
+            let menu_categ = document.querySelector('.basic');
+
+            // меняем карусель при нажатии на пункт меню
+
+            for (let i = 0; i < btn.length; i++) {
+                btn[i].addEventListener('click', function () {
+                    hide.classList.add('hide');
+                    show.classList.add('show');
+                });
+            }
+
+            //появление корзины
+
+            $('.cart__menu').on('click', function () {
+                $('.shopping__cart').addClass('shopping__cart__on');
+                $('.body__overlay').addClass('is-visible');
+
+            });
+
+            $('.offsetmenu__close__btn').on('click', function () {
+                $('.shopping__cart').removeClass('shopping__cart__on');
+                $('.body__overlay').removeClass('is-visible');
+            });
+
+            // всплывающее меню для удобства работы со смартфонов
+            menu_btn.addEventListener('click', function () {
+                menu_categ.classList.toggle('basic');
+            });
+
+        </script>
+    </body>
+</html>

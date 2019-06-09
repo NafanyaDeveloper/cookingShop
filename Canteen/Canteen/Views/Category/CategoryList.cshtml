@@ -1,0 +1,8 @@
+﻿@model List<Category>
+
+@foreach (Category item in Model) //список категорий для меню
+{
+    <li><a class="ctgListItem" href="#@item.Title" id="@item.Id"><div class="categories">@item.Title</a></li>
+}
+
+

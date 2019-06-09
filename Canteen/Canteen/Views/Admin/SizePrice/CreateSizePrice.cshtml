@@ -1,0 +1,29 @@
+﻿@model SizePrice
+
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";//страница информации о размерностях
+}
+
+
+<form method="post" asp-action="CreateSizePrice" class="col-12" asp-route-DishId="@ViewBag.DishId">
+    <div class="my-2 text-dark">
+        <h5>Создать размер/цена</h5>
+    </div>
+    <div class="form-group">
+        <label>Размер</label>
+        <input class="form-control" name="Size" type="number" required />
+    </div>
+    <div class="form-group">
+        <label>Цена</label>
+        <input class="form-control" name="Price" type="number" required />
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-block">
+        Создать
+    </button>
+</form>
+<a asp-action="DishInfo" asp-route-id="@ViewBag.DishId" class="btn-block col-12 mt-2" style="text-decoration: none">
+    <button class="btn btn-outline-secondary btn-block">
+        Вернуться
+    </button>
+</a>
+

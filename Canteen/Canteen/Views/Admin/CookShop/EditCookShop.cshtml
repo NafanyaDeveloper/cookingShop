@@ -1,0 +1,40 @@
+﻿@model CookShop
+
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";//форма редактирования столовой
+}
+
+
+<form enctype="multipart/form-data" asp-controller="Admin" asp-action="EditCookShop" class="col-12" asp-route-id="@Model.Id">
+    <div class="my-2 text-dark">
+        <h5>Редактировать столовую</h5>
+    </div>
+    <div class="form-group">
+        <label asp-for="Title" class="control-label">Название</label>
+        <input asp-for="Title" class="form-control" name="Title" type="text" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="StartTime">Начало работы</label>
+        <input asp-for="StartTime" class="form-control" name="StartTime" type="time" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="CloseTime">Конец работы</label>
+        <input asp-for="CloseTime" class="form-control" name="CloseTime" type="time" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Логотип</label>
+        <input asp-for="Image" type="file" name="Image" class="btn-block" accept="image/*" />
+    </div>
+    <div class="form-group" hidden>
+        <label asp-for="Img">Логотип</label>
+        <input asp-for="Img" type="text" name="Img" class="btn-block" accept="image/*" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-block">
+        Изменить
+    </button>
+</form>
+<a asp-action="Index" class="btn-block col-12 mt-2" style="text-decoration: none">
+    <button class="btn btn-outline-secondary btn-block">
+        Вернуться
+    </button>
+</a>

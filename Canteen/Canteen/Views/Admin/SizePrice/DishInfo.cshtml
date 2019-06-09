@@ -1,0 +1,39 @@
+﻿@model List<SizePrice>
+
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";//страница создания размерности
+}
+
+<h2 class="btn-block">@ViewBag.Dish</h2>
+<br />
+
+@foreach (SizePrice i in Model)
+{
+    <div class="card col-3 my-2 p-0 mx-1 mb-3" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Размер: @i.Size гр.</li>
+            <li class="list-group-item">Цена: @i.Price руб.</li>
+            <li class="list-group-item">
+                <div>
+                    <a style="text-decoration: none" asp-action="EditSizePrice" asp-route-id="@i.Id" class="btn-block">
+                        <button class="btn btn-outline-info btn-block">Изменить</button>
+                    </a>
+                    <a style="text-decoration: none" asp-action="DeleteSizePrice" asp-route-id="@i.Id" class="btn-block">
+                        <button class="btn btn-outline-danger btn-block">Удалить</button>
+                    </a>
+                </div>
+            </li>
+        </ul>
+            
+    </div>
+}
+<a style="text-decoration: none" asp-action="CreateSizePrice" class="mt-5 btn-block" asp-route-id="@ViewBag.DishId">
+    <button class="btn btn-outline-warning btn-block">
+        Добавить Размер/Цена
+    </button>
+</a>
+<a asp-action="CategoryInfo" asp-route-id="@ViewBag.CategoryId" style="text-decoration: none" class="btn-block mb-5">
+    <button class="btn btn-outline-secondary btn-block">
+        Вернуться
+    </button>
+</a>

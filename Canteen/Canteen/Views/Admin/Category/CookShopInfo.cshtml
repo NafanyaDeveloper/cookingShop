@@ -1,0 +1,38 @@
+﻿@model List<Category>
+
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";//страница категорий дла админки 
+}
+
+<h2 class="btn-block">@ViewBag.CookShop</h2>
+<br />
+
+@foreach (Category i in Model)
+{
+    <div class="card col-3 my-2 p-0 mx-1 mb-3" style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">@i.Title</h4>
+            <div>
+                <a style="text-decoration: none" asp-action="CategoryInfo" asp-route-id="@i.Id" class="btn-block">
+                    <button class="btn btn-outline-success btn-block">Подробнее</button>
+                </a>
+                <a style="text-decoration: none" asp-action="EditCategory" asp-route-id="@i.Id" class="btn-block">
+                    <button class="btn btn-outline-info btn-block">Изменить</button>
+                </a>
+                <a style="text-decoration: none" asp-action="DeleteCategory" asp-route-id="@i.Id" class="btn-block">
+                    <button class="btn btn-outline-danger btn-block">Удалить</button>
+                </a>
+            </div>
+        </div>
+    </div>
+}
+<a style="text-decoration: none" asp-action="CreateCategory" class="mt-5 btn-block" asp-route-id="@ViewBag.CookShopId">
+    <button class="btn btn-outline-warning btn-block">
+        Добавить категорию
+    </button>
+</a>
+<a asp-action="Index" style="text-decoration: none" class="btn-block mb-5">
+    <button class="btn btn-outline-secondary btn-block">
+        Вернуться
+    </button>
+</a>

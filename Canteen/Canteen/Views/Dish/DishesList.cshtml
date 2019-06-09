@@ -1,0 +1,55 @@
+﻿@model List<Dish>
+
+@foreach (Dish i in Model) // карточка блюда 
+{
+<div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="product">
+        <div class="product__inner">
+            <div class="pro__thumb">
+                <a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#">
+                    <img class="product_image" src="@i.Img" alt="product images" style="width: 405px; height:270px">
+                </a>
+            </div>
+            <div class="product__hover__info">
+                <ul class="product__action">
+                    <a href="">@i.Calorie калорий (100 гр)</a>
+                    <br />
+                    <a href="">@i.Protein% белков</a>
+                    <br />
+                    <a href="">@i.Fat% жиров</a>
+                    <br />
+                    <a href="">@i.Carbohydrate% углеводов</a>
+                </ul>
+            </div>
+        </div>
+        <div class="product__details">
+            <div class="row" id="t_@i.Id">
+                <h1 class="float-left-style food_name">@i.Title</h1>
+                <div class="col-sm-9">
+                    <div class="tabs">
+                        @foreach (SizePrice j in @i.SizePrice)
+                        {
+                            <input type="radio" name="inset_@i.Id" data-price="@j.Price" id="@j.Id" class="@i.Id"
+                                   data-size="@j.Size">
+                            <label for="@j.Id">@j.Size г</label>
+                        }
+
+                        <br />
+                        <br />
+                        <h3 id="price_@i.Id" class="price text-left price_under" style="margin-left: 5%;"></h3>
+                        <h2>
+                            <a title="Add TO Cart" href="#buy" class="cart_add">
+                                <span id="none" data-img="@i.Img" data-pr="@i.Protein" data-clr="@i.Calorie" data-fat="@i.Fat"
+                                      data-crb="@i.Carbohydrate" data-title="@i.Title" data-price="none" data-size="none"
+                                      class="ti-shopping-cart float-left-style">
+                                    Купить
+                                </span>
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+}

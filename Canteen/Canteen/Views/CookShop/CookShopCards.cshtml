@@ -1,0 +1,21 @@
+﻿@model List<CookShop>
+
+@foreach (CookShop i in Model) // карточка столовой
+{
+    <div class="col-lg-6 col-md-6 col-sm-6 product_cart">
+        <div class="product">
+            <div class="product__inner">
+                <div class="pro__thumb">
+                    <a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#">
+                        <img class="product_image" src="@i.Img" alt="product images" style="width: 405px; height:230px">
+                    </a>
+                </div>
+            </div>
+            <div class="product__details">
+                <div class="row">
+                    <h1 class="float-left-style food_name cookShopItem" style="cursor: pointer" id="@i.Id">@i.Title</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+}

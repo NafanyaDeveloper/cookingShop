@@ -1,0 +1,28 @@
+﻿@model Category
+
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";//форма создания категории для админки
+}
+
+
+<form method="post" asp-action="CreateCategory" class="col-12">
+    <div class="my-2 text-dark">
+        <h5>Создать категорию</h5>
+    </div>
+    <div class="form-group">
+        <label>Название</label>
+        <input class="form-control" name="Title" type="text" required />
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="CookShopId" value="@ViewBag.CookShopId" required hidden/>
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-block">
+        Создать
+    </button>
+</form>
+<a asp-action="CookShopInfo" asp-route-id="@ViewBag.CookShopId" class="btn-block col-12 mt-2" style="text-decoration: none">
+    <button class="btn btn-outline-secondary btn-block">
+        Вернуться
+    </button>
+</a>
+

@@ -1,0 +1,708 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.body.active {
+    background-color: black;
+    opacity: 0.5;
+}
+.category_food {
+    display: none;
+}
+.category_food.show {
+    display: block;
+}
+.categories-slider-area {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.menu {
+    left: -20px;
+    cursor: pointer;
+}
+
+.modal-window {
+    display: none;
+}
+
+.modal-window.active {
+    display: inline-block;
+    padding: 5px;
+}
+
+.menu-extra {
+/*    margin-left: 30px;
+    padding-top: 20px;*/
+    position: absolute;
+}
+
+/*параметры слайдера на главной*/
+.initial_slider.hide{
+    display: none;
+}
+
+.pro__thumb a {
+    display: block;
+}
+.product {
+    margin-top: 70px;
+}
+.product__inner {
+    position: relative;
+}
+
+.product_image {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 290px;
+    border-radius: 5px;
+}
+
+/* кнопка "Добавить в корзину" для кажой карточки*/
+.home-6 .product__action li a span {
+    margin-top: 0px;
+    font-size: 18px;
+}
+.home-6.popular__product--6 .product__action li {
+    border-radius: 50px;
+    box-shadow: none;
+}
+/*Стиль карточек блюд*/
+
+.another-product-style .product__action li::before {
+    background: #666666 none repeat scroll 0 0;
+    content: "";
+    height: 24px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+}
+
+.product__inner:hover .product__hover__info {
+    opacity: 0.8;
+    top: 50%;
+    visibility: visible;
+}
+.product__hover__info {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 60%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.6s;
+    background-color: #98fc98;
+    border-radius: 15px;
+    visibility: hidden;
+    width: 200px;
+}
+
+
+/* Подпись под каждый блюдом*/
+.price {
+    color: #ff4136;
+    font-size: 16px;
+}
+.product__details h2 {
+    color: #444444;
+    font-size: 14px;
+    font-weight: 500;
+}
+.product__details {
+    padding-top: 27px;
+}
+.product__price {
+    display: flex;
+    margin-top: 9px;
+}
+.product__price li {
+    color: #ff4136;
+    font-size: 16px;
+}
+.product__price li.price {
+    padding-left: 12px;
+}
+
+.product-categories-title > h3 {
+    border: 2px solid #ff4136;
+    color: #303030;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 15px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    border-radius: 3px;
+}
+/* Категории меню*/
+.menu-title {
+    border-radius: 5px;
+    border: 2px solid #ff4136;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.product-categories-menu {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid rgba(129, 129, 129, 0.2);
+    padding: 20px 0;
+    width: 100%;
+    border-radius: 3px;
+}
+.product-categories-menu ul li {
+    position: relative;
+}
+.product-categories-menu ul li a {
+    background-color: #fff;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    padding: 7px 20px;
+    text-transform: capitalize;
+    transition: all 0.3s ease 0s;
+}
+/*Цвет кнопок при наведении*/
+.product-categories-menu ul li a:hover {
+    color: #98fc98;
+}
+
+.product-slider-active .col-lg-4,
+.product-slider-active .col-sm-4,
+.product-slider-active .col-md-4,
+.product-slider-active .col-xa-12 {
+    width: 100%;
+    height: inherit;
+   }
+
+.product-slider-active .product {
+    margin-top: 30px;
+}
+
+.deal-area {
+    padding-top: 96px;
+}
+.product-slider-active2 .product {
+    margin-top: 30px;
+}
+/*анимация карточки*/
+.tab-content.jump > .tab-pane {
+    display: block;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.tab-content.jump > .tab-pane.active {
+    display: block;
+    height: auto;
+    opacity: 1;
+    overflow: visible;
+}
+
+.single__tabs__panel.tab-pane:not(.active) {
+    display: none;
+}
+.tabs {
+    width: 100%;
+    padding: 0px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.tabs>input { display:none; }
+.tabs>div {
+    display: none;
+    padding: 12px;
+    background-color: #98fc98;
+    border: 1px solid #98fc98;
+    border-radius: 6px;
+    width: 140px;
+    transition: 1s;
+    z-index: 5;
+    position: absolute;
+}
+.tabs>label {
+    display: inline-block;
+    padding: 7px;
+    margin: 5px -5px 10px 5px;
+    text-align: center;
+    color: #666666;
+/*    background-color: #98fc98;
+*/    border: 1.5px solid #98fc98;
+    cursor: pointer;
+    border-radius: 40px;
+}
+.tabs>input:checked + label {
+    color: black;
+    border: 1px solid #ff4136;
+    background-color: #ff4136;
+    opacity: 0.9;
+}
+#tab_1:checked ~ #txt_1,
+#tab_2:checked ~ #txt_2,
+#tab_3:checked ~ #txt_3 { display: block; }
+
+.ti-shopping-cart {
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 50px;
+    top: 10px;
+    position: relative;
+    z-index: 3;
+}
+
+.price_food {
+    color: #ff4136;
+    padding-right: 20px;
+    padding-top: 20px;
+    bottom: 50px;
+}
+
+.food_name {
+    width: 80px;
+    right: 65px;
+    position: relative;
+}
+
+    /*------------------------------
+  06. Быстрый просмотр карточки еды
+--------------------------------*/
+    #quickview-wrapper {
+    position: relative;
+}
+.modal-dialog.modal__container {
+    width: 1170px;
+}
+.modal-product {
+    display: flex;
+    padding-top: 20px;
+}
+.product-images {
+    min-width: 50%;
+    padding-right: 50px;
+}
+.product-info h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.rating__and__review {
+    display: flex;
+    margin-bottom: 15px;
+}
+.rating {
+  display: inline-block;
+  padding-right: 13px;
+}
+.rating li span {
+    color: #ff4136;
+}
+.rating li {
+    display: inline-block;
+}
+.rating li + li {
+    margin-left: 3px;
+}
+.review a {
+    color: #999;
+}
+.s-price-box span.new-price {
+    color: #ff4136;
+    font-size: 23px;
+    margin-right: 5px;
+}
+.s-price-box span.old-price {
+    color: #999;
+    font-size: 15px;
+    text-decoration: line-through;
+}
+.product-info {
+    padding-left: 50px;
+    width: 50%;
+}
+.quick-desc {
+    color: #999;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 83%;
+}
+.select__color {
+    display: flex;
+}
+.color__list {
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+}
+.color__list li + li {
+    margin-left: 15px;
+}
+.color__list li a {
+    background: #f10 none repeat scroll 0 0;
+    border-radius: 100%;
+    display: block;
+    height: 30px;
+    line-height: 31px;
+    text-align: center;
+    width: 30px;
+}
+.select__size {
+    display: flex;
+}
+.color__list li.gold a {
+    background: #cc9900 none repeat scroll 0 0;
+}
+.color__list li.orange a {
+    background: #cc6600 none repeat scroll 0 0;
+}
+.select__color ul.color__list li a {
+    text-indent: 999px;
+}
+.select__color h2 {
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.select__size h2 {
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.select__size {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+.select__size ul.color__list li a {
+    background: #f1f1f1 none repeat scroll 0 0;
+    color: #999;
+}
+.widget.widget_socialsharing_widget {
+    display: flex;
+}
+.social-icons {
+    display: flex;
+    margin-left: 30px;
+}
+h3.widget-title-modal {
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.social-icons li a {
+    border-radius: 100%;
+    color: #999;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+}
+.social-icons li + li {
+    margin-left: 30px;
+}
+.social-icons li a i {
+    font-size: 23px;
+}
+.social-icons li a:hover {
+    color: #ff4136;
+}
+.addtocart-btn {
+    margin-top: 66px;
+    text-align: left;
+}
+.addtocart-btn a {
+    background: #333 none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 87px;
+    text-transform: capitalize;
+    transition: all 0.5s ease 0s;
+}
+.addtocart-btn a:hover {
+    background: #ff4136 none repeat scroll 0 0;
+    color: #fff;
+}
+
+
+/*------------------------------
+  11. Подпись под карточками
+--------------------------------*/
+
+.product__details span.popular__pro__prize {
+    color: #9c9b9b;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 11px;
+}
+.section__title.section__title--2 p {
+    color: #666666;
+    font-size: 15px;
+    line-height: 26px;
+    margin: 27px auto auto;
+    width: 46%;
+}
+.popular__product__wrap .product {
+    margin-top: 60px;
+}
+.popular__product__wrap .col-lg-4 {
+    width: 100%;
+}
+.popular__product__wrap {
+    position: relative;
+}
+.popular__product__wrap.owl-carousel .owl-nav div {
+    background: #9999 none repeat scroll 0 0;
+    border-radius: 100%;
+    color: #f5f6f8;
+    height: 30px;
+    left: -30px;
+    line-height: 42px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 30px;
+}
+.popular__product__wrap.owl-carousel .owl-nav div.owl-next {
+    left: auto;
+    position: absolute;
+    right: -30px;
+}
+.popular__product__wrap.owl-carousel .owl-nav div i {
+    color: #fff;
+    font-size: 27px;
+}
+.popular__product__wrap.owl-theme .owl-nav [class*="owl-"]:hover {
+    background: #444 none repeat scroll 0 0;
+}
+.wrap__box__style--1 {
+    padding-right: 60px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    background: #fff;
+}
+.custop__container {
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 100px;
+}
+
+/*------------------------------
+  20. Контактные данные - пока их нет, но потом добавим
+--------------------------------*/
+
+#googleMap {
+    height: 633px;
+    width: 100%;
+}
+.contact__title {
+    color: #666666;
+    font-size: 20px;
+    margin-bottom: 38px;
+    text-transform: uppercase;
+}
+.contact__address__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.single__contact__address {
+    display: flex;
+}
+.contact__icon {
+    margin-right: 20px;
+    min-width: 60px;
+}
+.contact__icon span {
+    border: 1px solid #cbcbcb;
+    border-radius: 100%;
+    color: #393939;
+    display: block;
+    font-size: 24px;
+    height: 60px;
+    line-height: 54px;
+    text-align: center;
+    width: 60px;
+}
+.contact__address__inner + .contact__address__inner {
+    margin-top: 30px;
+}
+.htc__contact__address {
+    margin-bottom: 58px;
+}
+.contact__details p {
+    color: #666666;
+    font-size: 18px;
+    line-height: 28px;
+}
+.contact__details p a {
+    color: #666;
+    transition: all 0.4s ease 0s;
+}
+.contact__details p a:hover {
+    color: #ff4136;
+}
+.contact-box input {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: currentcolor currentcolor #c1c1c1;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    color: #666666;
+    font-size: 12px;
+    padding-bottom: 15px;
+}
+.single-contact-form {
+    margin-top: 30px;
+}
+.contact-box.name {
+    display: flex;
+    justify-content: space-between;
+}
+.contact-box.name input {
+    margin: 0 15px;
+    width: 50%;
+}
+.contact-box.name {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.contact-box.message textarea {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: transparent none repeat scroll 0 0;
+    border-color: currentcolor currentcolor #c1c1c1;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    min-height: 85px;
+    padding: 0;
+}
+.contact-box.message {
+    margin-bottom: 40px;
+}
+.contact-btn .fv-btn {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #d5d5d5;
+    color: #4b4b4b;
+    font-size: 14px;
+    height: 45px;
+    letter-spacing: 2px;
+    line-height: 45px;
+    padding: 0 70px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+.contact-btn .fv-btn:hover {
+    border: 1px solid #ff4136;
+    color: #fff;
+    background: #ff4136;
+}
+.contact-form-wrap > form {
+    margin-top: -9px;
+}
+.contact-box input::-moz-placeholder {
+    color: #666666 !important;
+}
+.contact-box textarea::-moz-placeholder {
+    color: #666666 !important;
+    opacity: 1;
+}
+
+/*расположение карусели на главном*/
+.float-left-style {
+    float: right;
+}
+.float-right-style {
+    float: left;
+}
+
+/*футер */
+.ft__widget {
+    padding-top: 15px;
+}
+
+.logo{
+font-family: 'Baloo Chettan', cursive;
+font-size: 24px;
+}
+
+.price_under {
+    position: absolute;
+}
+
+/* Анимация лоадера */
+.loader{
+  position: relative;
+  height: 200px;
+  padding: 1em 0;
+}
+
+.loader:before{
+  content:'';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 10px #96B566;
+  transform: translate(-50%, -50%);
+}
+
+.loader:after{
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    z-index: 999;
+    border-radius: 50%;
+    background: #F6FF97;
+    animation-name: loader;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loader {
+  0% { transform: translate(-72.5px,-7.5px); }
+  100% { transform: translate(58.5px,-7.5px); }
+}
+
+@media screen and (max-width: 769px) {
+    .logo {
+        font-family: 'Baloo Chettan', cursive;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1080px) and (min-width: 770px) {
+    .logo {
+        font-family: 'Baloo Chettan', cursive;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 1920px) and (min-width: 1081px) {
+    .logo {
+        font-family: 'Baloo Chettan', cursive;
+        font-size: 30px;
+    }
+}

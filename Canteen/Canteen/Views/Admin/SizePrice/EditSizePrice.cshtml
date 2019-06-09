@@ -1,0 +1,33 @@
+﻿@model SizePrice
+
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";//форма редактирования размерности для админки
+}
+
+
+<form method="post" asp-action="EditSizePrice" class="col-12" asp-route-Id="@Model.Id">
+    <div class="my-2 text-dark">
+        <h5>Изменить размер/цена</h5>
+    </div>
+    <div class="form-group">
+        <label asp-for="Size">Размер</label>
+        <input asp-for="Size" class="form-control" name="Size" type="number" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Цена</label>
+        <input asp-for="Price" class="form-control" name="Price" type="number" required />
+    </div>
+    <div class="form-group" hidden>
+        <label asp-for="DishId"></label>
+        <input asp-for="DishId" class="form-control" name="DishId" required />
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-block">
+        Изменить
+    </button>
+</form>
+<a asp-action="DishInfo" asp-route-id="@Model.DishId" class="btn-block col-12 mt-2" style="text-decoration: none">
+    <button class="btn btn-outline-secondary btn-block">
+        Вернуться
+    </button>
+</a>
+
